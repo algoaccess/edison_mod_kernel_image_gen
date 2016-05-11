@@ -1,8 +1,5 @@
 #!/bin/sh
 
-#Installing dependencies
-#apt-get install build-essential wget diffstat gawk chrpath texinfo libtool gcc-multilib libsdl1.2-dev dfu-util libqt4-core:i386 libqt4-gui:i386
-
 #Download sources
 wget http://downloadmirror.intel.com/25028/eng/edison-src-ww25.5-15.tgz
 tar xvzf edison-src-ww25.5-15.tgz
@@ -12,7 +9,7 @@ cd edison-src
 make setup
 
 #Patch Paho path bug
-sed -i 's/^SRC_URI.*/SRC_URI = "git:\/\/github.com\/eclipse\/paho.mqtt.c.git:protocol=http \\/' out/linux64/poky/meta-intel-iot-middleware/recipes-connectivity/paho-mqtt/paho-mqtt_3.1.bb
+sed -i 's/^SRC_URI.*/SRC_URI = "git:\/\/github.com\/eclipse\/paho.mqtt.c.git \\/' out/linux64/poky/meta-intel-iot-middleware/recipes-connectivity/paho-mqtt/paho-mqtt_3.1.bb
 
 #Compile kernel
 make image
@@ -39,4 +36,4 @@ cd ..
 mkdir edison-image-ww25.5-15-usb-mod
 cp -a edison-src/out/linux64/build/toFlash/. edison-image-ww25.5-15-usb-mod/
 
-echo "You can now run flashall.sh in edison-image-ww25.5-15-usb-mod directory to flash your Intel Edison"
+echo "You can now run flashall.sh in edison-image-ww25.5-15-usb-mod directory to flash your Intel Edison."
