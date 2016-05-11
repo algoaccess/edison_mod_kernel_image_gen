@@ -17,7 +17,7 @@ sed -i 's/^SRC_URI.*/SRC_URI = "git:\/\/github.com\/eclipse\/paho.mqtt.c.git:pro
 #Compile kernel
 make image
 
-#Replace lines of "# CONFIG_USB_SERIAL_FTDI_SIO is not set" >>> "# CONFIG_USB_SERIAL_FTDI_SIO=y"
+#Replace lines of "# CONFIG_USB_NET_AX88179_178A is not set" >>> "# CONFIG_USB_NET_AX88179_178A=y"
 sed -i '/^# CONFIG_USB_NET/ { s, is not set,=y, }' meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig
 
 #Remove # in from of CONFIG_USB_NET
@@ -34,3 +34,9 @@ make
 
 #Run postBuild Script
 meta-intel-edison/utils/flash/postBuild.sh out/linux64/build
+
+cd ..
+mkdir edison-image-ww25.5-15-usb-mod
+cp -a edison-src/out/linux64/build/toFlash/. edison-image-ww25.5-15-usb-mod/
+
+echo "You can now run flashall.sh in edison-image-ww25.5-15-usb-mod directory to flash your Intel Edison"
