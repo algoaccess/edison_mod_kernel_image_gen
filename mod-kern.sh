@@ -1,7 +1,8 @@
 #!/bin/sh
 
 #Download sources
-wget http://downloadmirror.intel.com/25028/eng/edison-src-ww25.5-15.tgz
+wget -N http://downloadmirror.intel.com/25028/eng/edison-src-ww25.5-15.tgz
+rm -rf edison-src
 tar xvzf edison-src-ww25.5-15.tgz
 cd edison-src
 

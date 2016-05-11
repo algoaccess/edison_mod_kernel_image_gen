@@ -10,4 +10,4 @@ sudo apt-get install build-essential wget diffstat gawk chrpath texinfo libtool 
 ##
 
 Ubuntu-based, Linux mint 17.2
-Lots of disk space prepare about 30GB
+Lots of disk space prepare about 40GB
