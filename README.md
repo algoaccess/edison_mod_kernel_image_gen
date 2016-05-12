@@ -50,7 +50,7 @@ rm edison-src-ww25.5-15.tgz
 rm ubilinux-edison-150309.tar.gz
 ```
 
-You can zip up the generated images then delete the origans to save even more space.
+You can zip up the generated images then delete the orignals to save even more space.
 
 ```bash
 zip -r edison-image-ww25.5-15-usb-mod.zip edison-image-ww25.5-15-usb-mod
