@@ -42,10 +42,12 @@ sudo ./splice-ubi.sh
 ```
 
 ##Finally
-Once you are confident and tested everything, you can remove the edison-src directory to increase free disk space.
+Once you are confident and tested everything, you can remove the edison-src directory and other downloaded files to increase free disk space.
 
 ```bash
 rm -rf edison-src
+rm edison-src-ww25.5-15.tgz
+rm ubilinux-edison-150309.tar.gz
 ```
 
 ##References
