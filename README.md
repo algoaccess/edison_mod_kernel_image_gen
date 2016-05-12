@@ -11,9 +11,9 @@ These instructions have only been tested on the following releases:
 1. edison-src-ww25.5-15 sources used in Release 2.1. Intel has not released sources for Release 3.0.
 2. ubilinux-edison-150309
 
-##Machine Required
+##Build Machine Required
 
-1. A Ubuntu 14.04 OS or later. I used Linux Mint 17.2 (64-bit) with no problems.
+1. Ubuntu 14.04 OS or later. I used Linux Mint 17.2 (64-bit) with no problems.
 2. Lots of disk space. Set aside at least 40GB to avoid compilation errors.
 3. Using an SSD is preferred
 
