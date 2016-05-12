@@ -2,6 +2,9 @@
 
 #Download and extract Ubilinux
 wget -N http://www.emutexlabs.com/files/ubilinux/ubilinux-edison-150309.tar.gz
+rm -rf toFlash
+rm -rf ubilinux-150309-usb-mod
+
 tar xvf ubilinux-edison-150309.tar.gz
 mv toFlash ubilinux-150309-usb-mod
 cd ubilinux-150309-usb-mod
