@@ -50,6 +50,16 @@ rm edison-src-ww25.5-15.tgz
 rm ubilinux-edison-150309.tar.gz
 ```
 
+You can zip up the generated images then delete the origans to save even more space.
+
+```bash
+zip -r edison-image-ww25.5-15-usb-mod.zip edison-image-ww25.5-15-usb-mod
+rm edison-image-ww25.5-15-usb-mod.zip
+zip -r ubilinux-150309-usb-mod.zip ubilinux-150309-usb-mod
+rm ubilinux-150309-usb-mod.zip
+```
+
+
 ##References
 1. [Edison Ethernet setup instructions](https://github.com/LGSInnovations/Edison-Ethernet)
 2. [Patch Paho source path](https://communities.intel.com/thread/101849)
