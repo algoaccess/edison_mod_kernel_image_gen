@@ -55,6 +55,7 @@ You can zip up the generated images then delete the orignals to save even more s
 ```bash
 zip -r edison-image-ww25.5-15-usb-mod.zip edison-image-ww25.5-15-usb-mod
 rm -rf edison-image-ww25.5-15-usb-mod
+
 zip -r ubilinux-150309-usb-mod.zip ubilinux-150309-usb-mod
 rm -rf ubilinux-150309-usb-mod
 ```
