@@ -3,7 +3,7 @@ This project contains convenience shell scripts that modifies and recompiles the
 
 One of the recipes containing the Paho package has been patched with the correct path before compilation. Details can be found in this [Intel forum thread](https://communities.intel.com/thread/101849).
 
-For more information on what shell scripts do, I have provided inline-comments in those scripts.
+For more information on what the shell scripts do, I have provided inline-comments in those scripts.
 
 ##Version tested
 These instructions have only been tested on the following releases:
