@@ -41,6 +41,13 @@ This shell script is dependent on the files generated earlier so remember to gen
 sudo ./splice-ubi.sh
 ```
 
+##Finally
+Once you are confident and tested everything, you can remove the edison-src directory to increase free disk space.
+
+```bash
+rm -rf edison-src
+```
+
 ##References
 1. [Edison Ethernet setup instructions](https://github.com/LGSInnovations/Edison-Ethernet)
 2. [Patch Paho source path](https://communities.intel.com/thread/101849)
