@@ -35,7 +35,7 @@ cd edison_mod_kernel_image_gen
 
 ##Splice modded Yocto kernel into Ubilinux
 
-This shell script is dependent on the files generated earlier so remember to generate the Yocto image first!
+This shell script is dependent on the files generated earlier so remember to generate the Yocto image first! This has to be run as root as we have to mount the Ubi disk image to replace certain files.
 
 ```bash
 sudo ./splice-ubi.sh
