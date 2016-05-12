@@ -37,4 +37,4 @@ cd ..
 mkdir edison-image-ww25.5-15-usb-mod
 cp -a edison-src/out/linux64/build/toFlash/. edison-image-ww25.5-15-usb-mod/
 
-echo "You can now run flashall.sh in edison-image-ww25.5-15-usb-mod directory to flash your Intel Edison."
+echo "You can now run sudo ./flashall.sh in edison-image-ww25.5-15-usb-mod directory to flash your Intel Edison."
