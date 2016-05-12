@@ -19,6 +19,7 @@ These instructions have only been tested on the following releases:
 
 ##Installing dependencies
 ```bash
+sudo apt-get update
 sudo apt-get install build-essential wget diffstat gawk chrpath texinfo libtool gcc-multilib libsdl1.2-dev dfu-util libqt4-core:i386 libqt4-gui:i386
 ```
 
