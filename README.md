@@ -24,7 +24,7 @@ sudo apt-get install build-essential wget diffstat gawk chrpath texinfo libtool 
 
 ##Generate Yocto image with modified kernel
 
-This process may take 4-5 hours depending on your machine speed. My Mac using Intel i7-4850HQ 2.3Ghz quad-core CPU takes about 1.5 hours.
+Clone this directory to a partition on your disk with at least 40GB free disk space. This process may take 4-5 hours depending on your machine speed. My Mac using Intel i7-4850HQ 2.3Ghz quad-core CPU takes about 1.5 hours.
 
 ```bash
 git clone https://github.com/algoaccess/edison_mod_kernel_image_gen.git
