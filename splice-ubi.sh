@@ -17,4 +17,4 @@ cp -r edison-src/out/current/build/tmp/work/edison-poky-linux/edison-image/1.0-r
 umount /mnt/ubi
 cd ..
 
-echo "You can now run flashall.sh in ubilinux-150309-usb-mod directory to flash your Intel Edison."
+echo "You can now run \"sudo ./flashall.sh\" in ubilinux-150309-usb-mod directory to flash your Intel Edison."
