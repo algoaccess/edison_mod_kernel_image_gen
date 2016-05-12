@@ -37,7 +37,7 @@ cd edison_mod_kernel_image_gen
 This shell script is dependent on the files generated earlier so remember to generate the Yocto image first!
 
 ```bash
-./splice-ubi.sh
+sudo ./splice-ubi.sh
 ```
 
 ##References
