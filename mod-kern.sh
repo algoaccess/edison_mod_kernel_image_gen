@@ -14,7 +14,7 @@ sed -i 's/^SRC_URI.*/SRC_URI = "git:\/\/github.com\/eclipse\/paho.mqtt.c.git \\/
 
 #Increase rootfs only from 1536MB to desired value if provided in the first command line argument
 if [ "$1" != "" ]; then
-    echo "We will resize rootfs from the default 1536MiB to $1 MiB"
+    echo "We will resize rootfs from the default 1536MiB to $1MiB"
     sed -i '/^partitions=/ { s,1536,'$1', }' meta-intel-edison/meta-intel-edison-bsp/recipes-bsp/u-boot/files/edison.env
 fi
 
