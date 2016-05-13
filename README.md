@@ -1,5 +1,7 @@
 # edison_mod_kernel_image_gen
-This project contains convenience shell scripts that modifies and recompiles the Intel Edison kernel with USB-Serial and USB-Ethernet driver support without much intervention. The output includes both the Yocto and Ubilinux image. 
+This project contains convenience shell scripts that modifies and recompiles the Intel Edison kernel with USB-Serial and USB-Ethernet driver support without much intervention. You can optionally resize the rootfs partition by specifying the new partition size as a command-line argument.
+
+The output includes both the Yocto and optionally the Ubilinux image using the second shell script. 
 
 One of the recipes containing the Paho package has been patched with the correct path before compilation. Details can be found in this [Intel forum thread](https://communities.intel.com/thread/101849).
 
@@ -27,10 +29,17 @@ sudo apt-get install build-essential wget diffstat gawk chrpath texinfo libtool 
 
 Clone this directory to a partition on your disk with at least 40GB free disk space. This process may take 4-5 hours depending on your machine speed. My Mac using Intel i7-4850HQ 2.3Ghz quad-core CPU takes about 2 hours.
 
+You can choose to resize the rootfs from the default 1536MiB. Just add the desired size as the command line argument. Make sure to not put a ridiculously small or large number. The `/home` partition will be reduced in size accordingly.
+
 ```bash
 git clone https://github.com/algoaccess/edison_mod_kernel_image_gen.git
 cd edison_mod_kernel_image_gen
+
+#To just generate the Yocto image with untouched rootfs at 1536MiB, if not skip to next command example.
 ./mod-kern.sh
+
+#To resize rootfs to desired size example 2048MiB
+./mod-kern.sh 2048
 ```
 
 ##Splice modded Yocto kernel into Ubilinux
@@ -59,7 +68,6 @@ rm -rf edison-image-ww25.5-15-usb-mod
 zip -r ubilinux-150309-usb-mod.zip ubilinux-150309-usb-mod
 rm -rf ubilinux-150309-usb-mod
 ```
-
 
 ##References
 1. [Edison Ethernet setup instructions](https://github.com/LGSInnovations/Edison-Ethernet)
