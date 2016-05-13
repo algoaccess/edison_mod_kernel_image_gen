@@ -74,3 +74,4 @@ You have to modify the `/etc/network/interfaces` with the necessary options to s
 ##References
 1. [Edison Ethernet setup instructions](https://github.com/LGSInnovations/Edison-Ethernet)
 2. [Patch Paho source path](https://communities.intel.com/thread/101849)
+3. [Create Debian image](http://mr-smirnov.com/2016/02/08/intel-edison-building-debian-image/)
