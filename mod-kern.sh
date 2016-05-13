@@ -40,6 +40,7 @@ make
 meta-intel-edison/utils/flash/postBuild.sh out/linux64/build
 
 cd ..
+rm -rf edison-image-ww25.5-15-usb-mod
 mkdir edison-image-ww25.5-15-usb-mod
 cp -a edison-src/out/linux64/build/toFlash/. edison-image-ww25.5-15-usb-mod/
 
