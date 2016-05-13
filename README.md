@@ -50,7 +50,7 @@ This shell script is dependent on the files generated earlier so remember to gen
 sudo ./splice-ubi.sh
 ```
 
-##Finally
+##Cleanup
 Once you are confident and tested everything, you can remove the edison-src directory and other downloaded files to increase free disk space.
 
 ```bash
@@ -68,6 +68,8 @@ rm -rf edison-image-ww25.5-15-usb-mod
 zip -r ubilinux-150309-usb-mod.zip ubilinux-150309-usb-mod
 rm -rf ubilinux-150309-usb-mod
 ```
+##Network setup within Intel Edison
+You have to modify the `/etc/network/interfaces` with the necessary options to setup your new ethernet interface. For more information, you can consult Step 3 of the [guide](https://github.com/LGSInnovations/Edison-Ethernet/tree/master/guides) here.
 
 ##References
 1. [Edison Ethernet setup instructions](https://github.com/LGSInnovations/Edison-Ethernet)
