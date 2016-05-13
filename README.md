@@ -29,7 +29,7 @@ sudo apt-get install build-essential wget diffstat gawk chrpath texinfo libtool 
 
 Clone this directory to a partition on your disk with at least 40GB free disk space. This process may take 4-5 hours depending on your machine speed. My Mac using Intel i7-4850HQ 2.3Ghz quad-core CPU takes about 2 hours.
 
-You can choose to resize the rootfs from the default 1536MiB. Just add the desired size as the command line argument. Make sure to not put a ridiculously small or large number. The `/home` partition will be reduced in size accordingly.
+You can choose to resize the rootfs from the default 1536MiB. Just add the desired size as the command line argument. Make sure to not put a ridiculously small or large number. The `/home` partition will be reduced in size accordingly. The resizing option does not work for Ubilinux.
 
 ```bash
 git clone https://github.com/algoaccess/edison_mod_kernel_image_gen.git
@@ -44,7 +44,7 @@ cd edison_mod_kernel_image_gen
 
 ##Splice modded Yocto kernel into Ubilinux
 
-This shell script is dependent on the files generated earlier so remember to generate the Yocto image first! This has to be run as root as we have to mount the Ubi disk image to replace certain files.
+This shell script is dependent on the files generated earlier so remember to generate the Yocto image first! This has to be run as root as we have to mount the Ubi disk image to replace certain files. If you specify a new rootfs size in the earlier step, it does not carry over to Ubilinux for some reason.
 
 ```bash
 sudo ./splice-ubi.sh
