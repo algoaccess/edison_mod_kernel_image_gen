@@ -18,7 +18,7 @@ make image
 #Replace lines of "# CONFIG_USB_NET_... is not set" >>> "# CONFIG_USB_NET_...=y"
 sed -i '/^# CONFIG_USB_NET/ { s, is not set,=y, }' meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig
 
-#Remove # in from of CONFIG_USB_NET...
+#Remove # in front of CONFIG_USB_NET...
 sed -i '/^# CONFIG_USB_NET/ { s,# CONFIG_USB_NET,CONFIG_USB_NET, }' meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig
 
 #Replace lines of "# CONFIG_USB_SERIAL_... is not set" >>> "# CONFIG_USB_SERIAL_...=y"
@@ -27,7 +27,7 @@ sed -i '/^# CONFIG_USB_SERIAL/ { s, is not set,=y, }' meta-intel-edison/meta-int
 #Remove # in front of CONFIG_USB_SERIAL_...
 sed -i '/^# CONFIG_USB_SERIAL/ { s,# CONFIG_USB_SERIAL,CONFIG_USB_SERIAL, }' meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig
 
-#Start compiling kernel
+#Compile once more
 make
 
 #Run postBuild Script
