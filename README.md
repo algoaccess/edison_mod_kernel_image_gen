@@ -22,7 +22,7 @@ These instructions have only been tested on the following releases:
 ##Installing dependencies
 ```bash
 sudo apt-get update
-sudo apt-get install build-essential diffstat gawk chrpath texinfo libtool gcc-multilib libsdl1.2-dev dfu-util debootstrap u-boot-tools debian-archive-keyring dfu-util python wget
+sudo apt-get install build-essential diffstat gawk chrpath texinfo libtool gcc-multilib libsdl1.2-dev dfu-util debootstrap u-boot-tools debian-archive-keyring dfu-util git python wget
 ```
 
 ##Generate Yocto image with modified kernel
