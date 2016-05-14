@@ -33,6 +33,9 @@ sed -i '/^# CONFIG_USB_SERIAL/ { s, is not set,=y, }' meta-intel-edison/meta-int
 #Remove # in front of CONFIG_USB_SERIAL_...
 sed -i '/^# CONFIG_USB_SERIAL/ { s,# CONFIG_USB_SERIAL,CONFIG_USB_SERIAL, }' meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig
 
+#Add # back in front of CONFIG_USB_SERIAL_DEBUG, we don't want DEBUG messages sent to/from the USB Serial adapter
+sed -i '/^CONFIG_USB_SERIAL_DEBUG/ { s,CONFIG_USB_SERIAL_DEBUG,# CONFIG_USB_SERIAL_DEBUG, }' meta-intel-edison/meta-intel-edison-bsp/recipes-kernel/linux/files/defconfig
+
 #Compile once more
 make
 
