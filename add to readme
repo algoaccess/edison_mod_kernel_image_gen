@@ -1,0 +1,17 @@
+udo apt-get install debootstrap debian-archive-keyring python
+
+sudo rm -rf edison-src
+
+About 2 hours
+./mod-kern-debian.sh
+
+About half hour
+sudo ./gen-debian-image.sh
+
+
+
+
+https://github.com/hackgnar/kali_intel_edison/blob/master/ManualBuild.md
+http://www.hackgnar.com/2016/02/building-debian-linux-for-intel-edison.html
+
+export SETUP_ARGS="--parallel_make=8 --bb_number_thread=8"
