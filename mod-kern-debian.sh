@@ -9,7 +9,7 @@ cd edison-src
 #Setup Build tree
 make setup
 
-sed -i -e 's/524288/1600000/' meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb
+sed -i -e 's/524288/1572864/' meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb
 
 #Compile kernel
 make debian_image
@@ -43,7 +43,7 @@ sed -i 's/^build_dir=$top_repo_dir\/build/build_dir=$top_repo_dir\/out\/linux64\
 #sed -i '/^  debootstrap --arch i386 --no-check-gpg/ { s,jessie,sid, }' meta-intel-edison/utils/create-debian-image.sh
 
 #Increase size of rootfs by 4 times
-#sed  -i '/^fsize=/ { s,524288),524288 * 3.5), }' meta-intel-edison/utils/create-debian-image.sh
+#sed  -i '/^fsize=/ { s,524288),1600000), }' meta-intel-edison/utils/create-debian-image.sh
 
 cd ..
 

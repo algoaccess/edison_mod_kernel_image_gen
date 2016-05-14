@@ -1,4 +1,10 @@
-udo apt-get install debootstrap debian-archive-keyring python
+sudo apt-get install debootstrap debian-archive-keyring python
+
+
+sudo apt-get install build-essential diffstat gawk chrpath texinfo libtool gcc-multilib libsdl1.2-dev dfu-util 
+sudo apt-get install build-essential diffstat gawk chrpath texinfo libtool gcc-multilib libsdl1.2-dev dfu-util debootstrap u-boot-tools debian-archive-keyring dfu-util python
+
+
 
 sudo rm -rf edison-src
 
@@ -14,4 +20,10 @@ sudo ./gen-debian-image.sh
 https://github.com/hackgnar/kali_intel_edison/blob/master/ManualBuild.md
 http://www.hackgnar.com/2016/02/building-debian-linux-for-intel-edison.html
 
-export SETUP_ARGS="--parallel_make=8 --bb_number_thread=8"
+export SETUP_ARGS="--parallel_make=16 --bb_number_thread=16"
+
+
+tar -zcvf edison-image-ww25.5-15-usb-deb-mod.tar.gz edison-image-ww25.5-15-usb-deb-mod
+
+
+scp -i "~/.ssh/yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-deb-mod.tar.gz .
