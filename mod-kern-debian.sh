@@ -9,8 +9,7 @@ cd edison-src
 #Setup Build tree
 make setup
 
-#sed -i 's/524288/2048000/' meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb
-sed -i '/^partitions=/ { s,1536,2000, }' meta-intel-edison/meta-intel-edison-bsp/recipes-bsp/u-boot/files/edison.env
+sed -i -e 's/524288/1600000/' meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb
 
 #Compile kernel
 make debian_image
