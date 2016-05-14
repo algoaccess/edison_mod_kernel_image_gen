@@ -26,4 +26,7 @@ export SETUP_ARGS="--parallel_make=16 --bb_number_thread=16"
 tar -zcvf edison-image-ww25.5-15-usb-deb-mod.tar.gz edison-image-ww25.5-15-usb-deb-mod
 
 
-scp -i "~/.ssh/yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-deb-mod.tar.gz .
+scp -i ~/.ssh/yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-deb-mod.tar.gz .
+
+rm -rf edison-image-ww25.5-15-usb-deb-mod
+tar -xzvf edison-image-ww25.5-15-usb-deb-mod.tar.gz
