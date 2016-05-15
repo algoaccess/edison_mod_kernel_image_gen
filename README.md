@@ -1,7 +1,7 @@
 # edison_mod_kernel_image_gen
-This project contains convenience shell scripts that modifies and recompiles the Intel Edison kernel with USB-Serial and USB-Ethernet driver support without much intervention. You can optionally resize the rootfs partition by specifying the new partition size as a command-line argument.
+This project contains convenience shell scripts that modifies and recompiles the Intel Edison kernel with USB-Serial and USB-Ethernet driver support without much intervention. You can optionally resize the rootfs partition for the Yocto kernel. by specifying the new partition size as a command-line argument.
 
-The output includes both the Yocto and optionally the Ubilinux image using the second shell script. 
+The output includes both the Yocto and optionally the Ubilinux image using the second shell script. You can compile a Debian distribution with a provided shell script too.
 
 One of the recipes containing the Paho package has been patched with the correct path before compilation. Details can be found in this [Intel forum thread](https://communities.intel.com/thread/101849).
 
@@ -52,7 +52,7 @@ sudo ./splice-ubi.sh
 
 ##Create Debian image from source
 
-Although Ubilinux is based on Debian, there may be use cases where you may not want to use it and might want to compile your own Debian-based version. So here are the instructions to do so.
+Although Ubilinux is based on Debian, there may be use cases where you may not want to use it and might want to compile your own Debian-based version. So here are the instructions to do so. I have set the rootfs to use a fixed 1536MB to give more space for installing packages.
 
 ```bash
 sudo rm -rf edison-src
@@ -74,7 +74,7 @@ export SETUP_ARGS="--parallel_make=8 --bb_number_thread=8"
 
 You can also leverage on Amazon EC2 to speed up compilation even further. Since this is a CPU-heavy compute task, I opted for the Compute Optimized Instance Type C4 instead of the General Purpose M4. If you are willing to pay more, Type C4 can technically go up to 36 cores. However I noticed that in many portions during compilation, they generally do not use close to 36 cores.
 
-So I settled with c4.4xlarge with 16 cores to balance between compilation time and cost.
+So I settled with c4.4xlarge with 16 cores to balance between compilation time and cost. I chose the SSD size of the instance to be 100GiB.
 
 ```bash
 export SETUP_ARGS="--parallel_make=16 --bb_number_thread=16"
