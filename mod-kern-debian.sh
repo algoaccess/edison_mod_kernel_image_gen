@@ -40,10 +40,10 @@ make
 sed -i 's/^build_dir=$top_repo_dir\/build/build_dir=$top_repo_dir\/out\/linux64\/build/' meta-intel-edison/utils/create-debian-image.sh
 
 #Change from jessie to a newer sid to use latest packages. Comment out the following line if to want use the unstable distribution sid
-#sed -i '/^  debootstrap --arch i386 --no-check-gpg/ { s,jessie,sid, }' meta-intel-edison/utils/create-debian-image.sh
-
-#Increase size of rootfs by 4 times
-#sed  -i '/^fsize=/ { s,524288),1600000), }' meta-intel-edison/utils/create-debian-image.sh
+if [ "$1" != "sid" ]; then
+    echo "We will use the unstable sid branch instead of the stable jessie"
+    sed -i '/^  debootstrap --arch i386 --no-check-gpg/ { s,jessie,sid, }' meta-intel-edison/utils/create-debian-image.sh
+fi
 
 cd ..
 
