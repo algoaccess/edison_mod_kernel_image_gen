@@ -88,6 +88,8 @@ tar -zcvf edison-image-ww25.5-15-usb-deb-mod.tar.gz edison-image-ww25.5-15-usb-d
 
 #Run this on your computer
 scp -i yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-deb-mod.tar.gz /home/user/yourlocation
+#To uncompress the image on your machine to prepare for flashing.
+tar -xzvf edison-image-ww25.5-15-usb-deb-mod.tar.gz
 ```
 
 ##Cleanup
