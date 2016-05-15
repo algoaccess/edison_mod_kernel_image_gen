@@ -77,7 +77,7 @@ export SETUP_ARGS="--parallel_make=8 --bb_number_thread=8"
 
 You can also leverage on Amazon EC2 to speed up compilation even further. Since this is a CPU-heavy compute task, I opted for the Compute Optimized Instance Type C4 instead of the General Purpose M4. If you are willing to pay more, Type C4 can technically go up to 36 cores. However I noticed that in many portions during compilation, they generally do not use close to 36 cores.
 
-So I settled with c4.4xlarge with 16 cores to balance between compilation time and cost. I chose the SSD size of the instance to be 100GiB.
+So I settled with c4.4xlarge with 16 cores to balance between compilation time and cost. I chose the SSD size of the instance to be 100GiB. Make sure you choose Ubuntu 14.04 64-bit as the OS.
 
 ```bash
 export SETUP_ARGS="--parallel_make=16 --bb_number_thread=16"
