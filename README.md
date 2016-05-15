@@ -50,6 +50,46 @@ This shell script is dependent on the files generated earlier so remember to gen
 sudo ./splice-ubi.sh
 ```
 
+##Create Debian image from source
+
+Although Ubilinux is based on Debian, there may be use cases where you may not want to use it and might want to compile your own Debian-based version. So here are the instructions to do so.
+
+```bash
+sudo rm -rf edison-src
+
+This will take many hours
+./mod-kern-debian.sh
+
+About half hour
+sudo ./gen-debian-image.sh
+```
+
+##Increase number of compilation threads for better CPUs or Amazon EC2
+
+If your CPU has more cores, you can let the compile script use those cores to speed up compilation. If your CPU has for example 8 cores, you can execute the following command before running any of the shell scripts or make commands.
+
+```bash
+export SETUP_ARGS="--parallel_make=8 --bb_number_thread=8"
+```
+
+You can also leverage on Amazon EC2 to speed up compilation even further. Since this is a CPU-heavy compute task, I opted for the Compute Optimized Instance Type C4 instead of the General Purpose M4. If you are willing to pay more, Type C4 can technically go up to 36 cores. However I noticed that in many portions during compilation, they generally do not use close to 36 cores.
+
+So I settled with c4.4xlarge with 16 cores to balance between compilation time and cost.
+
+```bash
+export SETUP_ARGS="--parallel_make=16 --bb_number_thread=16"
+
+#Run the compilation script here. I will use the Debian script as an example here.
+./mod-kern-debian.sh
+sudo ./gen-debian-image.sh
+
+#Compress the compiled image
+tar -zcvf edison-image-ww25.5-15-usb-deb-mod.tar.gz edison-image-ww25.5-15-usb-deb-mod
+
+#Run this on your computer
+scp -i yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-deb-mod.tar.gz /home/user/yourlocation
+```
+
 ##Cleanup
 Once you are confident and tested everything, you can remove the edison-src directory and other downloaded files to increase free disk space.
 
@@ -67,6 +107,9 @@ rm -rf edison-image-ww25.5-15-usb-mod
 
 zip -r ubilinux-150309-usb-mod.zip ubilinux-150309-usb-mod
 rm -rf ubilinux-150309-usb-mod
+
+zip -r edison-image-ww25.5-15-usb-deb-mod.zip edison-image-ww25.5-15-usb-deb-mod
+rm -rf edison-image-ww25.5-15-usb-deb-mod
 ```
 ##Network setup within Intel Edison
 You have to modify the `/etc/network/interfaces` with the necessary options to setup your new ethernet interface. For more information, you can consult Step 3 of the [guide](https://github.com/LGSInnovations/Edison-Ethernet/tree/master/guides) here.
@@ -74,4 +117,5 @@ You have to modify the `/etc/network/interfaces` with the necessary options to s
 ##References
 1. [Edison Ethernet setup instructions](https://github.com/LGSInnovations/Edison-Ethernet)
 2. [Patch Paho source path](https://communities.intel.com/thread/101849)
-3. [Create Debian image](http://mr-smirnov.com/2016/02/08/intel-edison-building-debian-image/)
+3. [Create Debian image](http://www.hackgnar.com/2016/02/building-debian-linux-for-intel-edison.html)
+4. [Use Amazon EC2 for compilation](https://github.com/hackgnar/kali_intel_edison/blob/master/ManualBuild.md)
