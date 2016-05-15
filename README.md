@@ -68,6 +68,30 @@ sudo rm -rf edison-src
 sudo ./gen-debian-image.sh
 ```
 
+##Debian jessie libc version
+
+It seems the version of libc on jessie is out-of-date. When you do a `sudo apt-get upgrade`, you will get the following message.
+
+```
+You might want to run 'apt-get -f install' to correct these.
+The following packages have unmet dependencies:
+ bcm43340-bt : Depends: libc6 (>= 2.20) but 2.19-18+deb8u4 is installed
+ u-boot-fw-utils : Depends: libc6 (>= 2.20) but 2.19-18+deb8u4 is installed
+E: Unmet dependencies. Try using -f.
+```
+
+You can choose to run `apt-get -f install` and remove the packages but I'm unsure of the repercussions. sid does not have this problem.
+
+##Debian `/etc/fstab` issue
+
+For some strange reason on both jessie and sid, the `/home` directory is not mounted on `/dev/mmcblk0p10` as stated in `/etc/fstab`. During first-boot, `/home` is mounted properly. On subsquent reboots, the mount point is lost. 
+
+To correct this, add the following to the bottom of the `/etc/fstab` file then reboot.
+
+```
+/dev/disk/by-partlabel/home     /home       auto    noauto,comment=systemd.automount,nosuid,nodev,noatime,discard     1   1
+```
+
 ##Increase number of compilation threads for better CPUs or Amazon EC2
 
 If your CPU has more cores, you can let the compile script use those cores to speed up compilation. If your CPU has for example 8 cores, you can execute the following command before running any of the shell scripts or `make` commands.
