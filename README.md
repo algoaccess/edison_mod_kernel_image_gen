@@ -1,5 +1,5 @@
 # edison_mod_kernel_image_gen
-This project contains convenience shell scripts that modifies and recompiles the Intel Edison kernel with USB-Serial and USB-Ethernet driver support without much intervention. You can optionally resize the rootfs partition for the Yocto kernel. by specifying the new partition size as a command-line argument.
+This project contains convenience shell scripts that modifies and recompiles the Intel Edison kernel with USB-Serial and USB-Ethernet driver support without much intervention. You can optionally resize the rootfs partition for the Yocto kernel by specifying the new partition size as a command-line argument.
 
 The output includes both the Yocto and optionally the Ubilinux image using the second shell script. You can compile a Debian distribution with a provided shell script too.
 
