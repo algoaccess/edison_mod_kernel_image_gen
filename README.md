@@ -107,17 +107,16 @@ So I settled with c4.4xlarge with 16 cores to balance between compilation time a
 ```bash
 export SETUP_ARGS="--parallel_make=16 --bb_number_thread=16"
 
-#Run the compilation script here. I will use the Debian script as an example here.
-./mod-kern-debian.sh
-sudo ./gen-debian-image.sh
+#Run the compilation script here. I will use the Yocto script as an example here.
+./mod-kern-yocto.sh
 
 #Compress the compiled image
-tar -zcvf edison-image-ww25.5-15-usb-deb-mod.tar.gz edison-image-ww25.5-15-usb-deb-mod
+tar -zcvf edison-image-ww25.5-15-usb-mod.tar.gz edison-image-ww25.5-15-usb-mod
 
 #Run this on your computer
-scp -i yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-deb-mod.tar.gz /home/user/yourlocation
+scp -i yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-mod.tar.gz /home/user/yourlocation
 #To uncompress the image on your machine to prepare for flashing.
-tar -xzvf edison-image-ww25.5-15-usb-deb-mod.tar.gz
+tar -xzvf edison-image-ww25.5-15-usb-mod.tar.gz
 ```
 
 ##Cleanup
