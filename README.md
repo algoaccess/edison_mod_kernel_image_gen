@@ -36,10 +36,10 @@ git clone https://github.com/algoaccess/edison_mod_kernel_image_gen.git
 cd edison_mod_kernel_image_gen
 
 #To just generate the Yocto image with untouched rootfs at 1536MiB, if not skip to next command example.
-./mod-kern.sh
+./mod-kern-yocto.sh
 
 #To resize rootfs to desired size example 2048MiB
-./mod-kern.sh 2048
+./mod-kern-yocto.sh 2048
 ```
 
 ##Splice modded Yocto kernel into Ubilinux
