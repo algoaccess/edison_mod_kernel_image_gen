@@ -68,7 +68,9 @@ sudo rm -rf edison-src
 sudo ./gen-debian-image.sh
 ```
 
-##Debian jessie libc version
+##Issues
+
+###Debian jessie libc version
 
 It seems the version of libc on jessie is out-of-date. When you do a `sudo apt-get upgrade`, you will get the following message.
 
@@ -82,7 +84,7 @@ E: Unmet dependencies. Try using -f.
 
 You can choose to run `apt-get -f install` and remove the packages but I'm unsure of the repercussions. sid does not have this problem.
 
-##Debian `/etc/fstab` issue
+###Debian `/etc/fstab` issue
 
 For some strange reason on both jessie and sid, the `/home` directory is not mounted on `/dev/mmcblk0p10` as stated in `/etc/fstab`. During first-boot, `/home` is mounted properly. On subsquent reboots, the mount point is lost. 
 
@@ -91,6 +93,10 @@ To correct this, add the following to the bottom of the `/etc/fstab` file then r
 ```
 /dev/disk/by-partlabel/home     /home       auto    noauto,comment=systemd.automount,nosuid,nodev,noatime,discard     1   1
 ```
+
+###Custom Debian Build Bluetooth issues
+
+Bluetooth specifically Low Energy does not seem to work. The command `hcitool` and `hciconfig` cannot seem to locate the `hci0` device. Ublinux does not have this issue.
 
 ##Increase number of compilation threads for better CPUs or Amazon EC2
 
