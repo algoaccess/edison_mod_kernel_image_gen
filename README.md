@@ -66,7 +66,7 @@ sudo ./gen-debian-image.sh
 
 ##Increase number of compilation threads for better CPUs or Amazon EC2
 
-If your CPU has more cores, you can let the compile script use those cores to speed up compilation. If your CPU has for example 8 cores, you can execute the following command before running any of the shell scripts or make commands.
+If your CPU has more cores, you can let the compile script use those cores to speed up compilation. If your CPU has for example 8 cores, you can execute the following command before running any of the shell scripts or `make` commands.
 
 ```bash
 export SETUP_ARGS="--parallel_make=8 --bb_number_thread=8"
