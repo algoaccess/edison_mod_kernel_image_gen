@@ -57,10 +57,13 @@ Although Ubilinux is based on Debian, there may be use cases where you may not w
 ```bash
 sudo rm -rf edison-src
 
-This will take many hours
+#Compiling the kernel will take a few hours
 ./mod-kern-debian.sh
 
-About half hour
+#To compile with the Debian Sid unstable branch
+./mod-kern-debian.sh sid
+
+#Generating the image and downloading the necessary packages takes about half hour
 sudo ./gen-debian-image.sh
 ```
 
