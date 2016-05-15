@@ -52,21 +52,6 @@ else
     fi
 fi
 
-
-#!/bin/bash
-if [[ $# -eq 0 ]]
-then
-echo "No arguments, we are staying with jessie"
-else
-if [ "$1" == "sid" ]; then
-echo "We will use the unstable sid branch instead of the stable jessie"
-else
-echo "Unknown argument, staying with jessie"
-fi
-fi
-
-
-
 cd ..
 
 echo "To continue, you now have to run \"sudo ./gen-debian-image.sh\" to generate the Debian image."
