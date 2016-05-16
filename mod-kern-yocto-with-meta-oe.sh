@@ -26,10 +26,10 @@ cd ..
 
 #Modify the meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb to include which recipe sources you want to have
 curr_dir=$(pwd)
-sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-oe \\\#" bblayers.conf
-sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-ruby \\\#" bblayers.conf
-sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-python \\\#" bblayers.conf
-sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-networking \\\#" bblayers.conf
+sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-oe \\\#" out/linux64/build/conf/bblayers.conf 
+sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-ruby \\\#" out/linux64/build/conf/bblayers.conf 
+sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-python \\\#" out/linux64/build/conf/bblayers.conf 
+sed -i "s#.*meta-arduino.*#&\n  $curr_dir/meta-intel-edison/meta-openembedded/meta-networking \\\#" out/linux64/build/conf/bblayers.conf 
 
 #Put a new line. Then add necessary packages
 echo "" >> meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb
