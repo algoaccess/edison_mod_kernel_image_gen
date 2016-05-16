@@ -125,6 +125,8 @@ scp -i yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edi
 tar -xzvf edison-image-ww25.5-15-usb-mod.tar.gz
 ```
 
+Remember to stop or poweroff your instance once you have finished to avoid racking up huge bills since this is quite a powerful instance. Once you confirm you no longer need the instance, it is better to terminate it once and for all to reduce storage charges.
+
 ##Cleanup
 Once you are confident and tested everything, you can remove the edison-src directory and other downloaded files to increase free disk space.
 
