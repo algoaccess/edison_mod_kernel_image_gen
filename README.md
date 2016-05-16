@@ -43,6 +43,16 @@ cd edison_mod_kernel_image_gen
 ./mod-kern-yocto.sh 2048
 ```
 
+##Generate Yocto image with meta-openembedded recipes
+
+The example shell script will do everything as the above as well as as install Samba with the help of external recipes from [meta-openembedded](https://github.com/openembedded/meta-openembedded).
+
+```bash
+./mod-kern-yocto-with-meta-oe.sh
+```
+
+The objective of this shell script is for you to customise the recipe section in it before generating the image.
+
 ##Splice modded Yocto kernel into Ubilinux
 
 This shell script is dependent on the files generated earlier so remember to generate the Yocto image first! This has to be run as root as we have to mount the Ubi disk image to replace certain files. If you specify a new rootfs size in the earlier step, it does not carry over to Ubilinux for some reason.
