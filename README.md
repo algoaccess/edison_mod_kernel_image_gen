@@ -159,7 +159,10 @@ zip -r edison-image-ww25.5-15-usb-deb-mod.zip edison-image-ww25.5-15-usb-deb-mod
 rm -rf edison-image-ww25.5-15-usb-deb-mod
 ```
 ##Network setup within Intel Edison
+
 You have to modify the `/etc/network/interfaces` with the necessary options to setup your new ethernet interface. For more information, you can consult Step 3 of the [guide](https://github.com/LGSInnovations/Edison-Ethernet/tree/master/guides) here.
+
+For Yocto, you may have to additionally run `systemctl enable connman && systemctl start connman`.
 
 ##References
 1. [Edison Ethernet setup instructions](https://github.com/LGSInnovations/Edison-Ethernet)
