@@ -166,3 +166,4 @@ You have to modify the `/etc/network/interfaces` with the necessary options to s
 2. [Patch Paho source path](https://communities.intel.com/thread/101849)
 3. [Create Debian image](http://www.hackgnar.com/2016/02/building-debian-linux-for-intel-edison.html)
 4. [Use Amazon EC2 for compilation](https://github.com/hackgnar/kali_intel_edison/blob/master/ManualBuild.md)
+5. [Building custom images](https://software.intel.com/en-us/node/593592)
