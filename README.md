@@ -49,6 +49,9 @@ The example shell script will do everything as the above as well as as install S
 
 ```bash
 ./mod-kern-yocto-with-meta-oe.sh
+
+#You can also specify the rootfs size
+./mod-kern-yocto-with-meta-oe.sh 1900
 ```
 
 The objective of this shell script is for you to customise the recipe section in it before generating the image.
