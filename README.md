@@ -134,8 +134,12 @@ export SETUP_ARGS="--parallel_make=32 --bb_number_thread=32"
 #Compress the compiled image
 tar -zcvf edison-image-ww25.5-15-usb-mod.tar.gz edison-image-ww25.5-15-usb-mod
 
-#Run this on your computer
+#For EC2: run this on your computer to download the image (Modify the necessary user names and paths)
 scp -i yourkey.pem ubuntu@server-ip:/home/ubuntu/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-mod.tar.gz /home/user/yourlocation
+
+#For GCE: run this instead (Modify the necessary user names and paths)
+scp user@server-ip:/home/user/edison_mod_kernel_image_gen/edison-image-ww25.5-15-usb-mod.tar.gz /home/user/yourlocation
+
 #To uncompress the image on your machine to prepare for flashing.
 tar -xzvf edison-image-ww25.5-15-usb-mod.tar.gz
 ```
