@@ -121,7 +121,7 @@ If your CPU has more cores, you can let the compile script use those cores to sp
 export SETUP_ARGS="--parallel_make=8 --bb_number_thread=8"
 ```
 
-You can also leverage on Amazon EC2 or Google Compute Engine (GCE) to speed up compilation even further. Since this is a CPU-heavy compute task, you should optimise for the number of CPUs instead of RAM and storage. If you choose EC2, the Compute Optimized Instance Type C4 c4.8 (36 cores) is the best choice. I eventually settled with GCE with 32 CPUs with the lowest 28.8 GB RAM.
+You can also leverage on Amazon EC2 or Google Compute Engine (GCE) to speed up compilation even further. Since this is a CPU-heavy compute task, you should optimise for the number of CPUs instead of RAM and storage. If you choose EC2, the Compute Optimized Instance Type C4 c4.8 (36 cores) is the best choice. I eventually settled with GCE with 32 CPUs with the lowest 28.8 GB RAM as it is offers more value.
 
 I chose the SSD size of the instance to be 80GB. Make sure you choose Ubuntu 14.04 64-bit as the OS.
 
