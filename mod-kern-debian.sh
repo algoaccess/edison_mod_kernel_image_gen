@@ -40,7 +40,7 @@ make
 sed -i 's/^build_dir=$top_repo_dir\/build/build_dir=$top_repo_dir\/out\/linux64\/build/' meta-intel-edison/utils/create-debian-image.sh
 
 #Change from jessie to a newer sid to use latest packages.
-if [[ $# -eq 0 ]]
+if [ $# -eq 0 ]
 	then
 		echo "No arguments, we are staying with jessie"
 else
