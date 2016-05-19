@@ -107,13 +107,11 @@ To correct this, add the following to the bottom of the `/etc/fstab` file then r
 /dev/disk/by-partlabel/home     /home       auto    noauto,comment=systemd.automount,nosuid,nodev,noatime,discard     1   1
 ```
 
-###Custom Debian Build network/bluetooth issues
+###Custom Debian Build bluetooth issues
 
 Bluetooth specifically Low Energy does not seem to work. The command `hcitool` and `hciconfig` cannot seem to locate the `hci0` device. Ublinux does not have this issue.
 
-For networks: I can't seem to get Wifi working. DHCP seems to work for USB-Ethernet but I'm unsure how to set static IP after trying out many solutions I found online.
-
-##Increase number of compilation threads for better CPUs or Amazon EC2
+##Increase number of compilation threads for better CPUs or Cloud Computing
 
 If your CPU has more cores, you can let the compile script use those cores to speed up compilation. If your CPU has for example 8 cores, you can execute the following command before running any of the shell scripts or `make` commands.
 
