@@ -38,4 +38,4 @@ make
 
 cd ..
 
-echo "To continue, you now have to run \"sudo ./gen-debian-image.sh\" to generate the Debian image."
+echo "To continue, you now have to run \"sudo ./gen-debian-image.sh [sid]\" to generate the Debian image."
