@@ -203,7 +203,7 @@ echo "127.0.0.1       localhost.localdomain           edison" >> $ROOTDIR/etc/ho
 echo "edison" > $ROOTDIR/etc/hostname
 echo "rootfs               /                    ext4     data=journal    1  1" > $ROOTDIR/etc/fstab
 echo "/dev/disk/by-partlabel/boot     /boot       auto    noauto,comment=systemd.automount,nosuid,nodev,noatime,discard     1   1" >> $ROOTDIR/etc/fstab
-echo "/dev/disk/by-partlabel/home     /home      ext4    data=journal     1   1" >> $ROOTDIR/etc/fstab
+echo "/dev/disk/by-partlabel/home     /home      ext4    data=journal    0  2" >> $ROOTDIR/etc/fstab
 
 # Clean up
 umount -l -f $ROOTDIR/sys
