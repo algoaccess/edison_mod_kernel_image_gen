@@ -71,14 +71,12 @@ Although Ubilinux is based on Debian, there may be use cases where you may not w
 ```bash
 sudo rm -rf edison-src
 
-#Compiling the kernel with default jessie, this will take a few hours. If you want sid, skip to next command.
+#Compiling the kernel with default jessie, this will take a few hours.
 ./mod-kern-debian.sh
 
-#Compiling the kernel with sid branch. sid is "supposedly" unstable but the packages are more up-to-date.
-./mod-kern-debian.sh sid
-
-#Generating the image and downloading the necessary packages takes about half hour
-sudo ./gen-debian-image.sh
+#Generating the image and downloading the necessary packages takes about half hour. 
+#If you want the sid branch, add sid as a command line argument. If you want to stay with jessie, just leave it out.
+sudo ./gen-debian-image.sh [sid]
 ```
 
 ##Issues
