@@ -222,7 +222,6 @@ mkfs.ext4 -F -L rootfs edison-image-edison.ext4
 rm -rf tmpext4
 mkdir tmpext4
 mount -o loop edison-image-edison.ext4 tmpext4
-tune2fs -o journal_data tmpext4
 cp -a $ROOTDIR/* tmpext4/
 umount tmpext4
 rmdir tmpext4
